@@ -16,7 +16,7 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
+// When the `nestedFunction` tries to console.log the variable `internal`, it first checks to see if a variable with that name has been declared inside itself, then it checks `myFunction`, where it finds the variable `internal` and logs it to the console. Nested functions have access to variables in parent functions.
 
 
 
@@ -28,10 +28,9 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
-  }
+function summation(num) {
+  return num === 1 ? 1 : num + summation(num - 1)
+}
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -56,8 +55,8 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(data){
+    return data.map(animal => `name: ${animal.animal_name}, scientific: ${animal.scientific_name}`)
   }
   
 
@@ -67,8 +66,8 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(data){
+    return data.map(animal => animal.animal_name.toLowerCase())
   }
   
   
@@ -77,8 +76,8 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(data){
+    return data.filter(animal => animal.population < 5)
   }
   
 
